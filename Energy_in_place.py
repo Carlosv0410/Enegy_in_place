@@ -20,11 +20,11 @@ st.warning('''Ecuaciones de energía:
 
 	''')
 
-with st.beta_expander('Variables description'):
+with st.expander('Variables description'):
 	st.image(image)
-with st.beta_expander('Parámetros del Campo Geotérmico:'):
+with st.expander('Parámetros del Campo Geotérmico:'):
 
-	columna_1 , columna_2 , columna_3 = st.beta_columns(3)
+	columna_1 , columna_2 , columna_3 = st.columns(3)
 
 	with columna_1:
 		A = st.number_input('Area [Km2]',5.00,12.00,6.25)
@@ -46,8 +46,8 @@ with st.beta_expander('Parámetros del Campo Geotérmico:'):
 	st.write('Calor almacennado en el fluido:',  format(Qf,'.4E'))
 	st.write('Calor total:', format(Qt,'.4E'))
 
-with st.beta_expander('Parámetros de la Planta Geotérmica:'):
-	columna_4 , columna_5 , columna_6 = st.beta_columns(3)
+with st.expander('Parámetros de la Planta Geotérmica:'):
+	columna_4 , columna_5 , columna_6 = st.columns(3)
 	with columna_4:
 		Rf = st.number_input('Factor de recuperación de calor [-]',min_value=0.10, max_value=0.25, value=0.15 )
 		Ce = st.number_input('Eficiencia de conversión [-]',min_value=0.00, max_value=2.00, value=0.10 )
